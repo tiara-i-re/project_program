@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <style type="text/css">
+    h1 {
+    color:#333333;
+    font-size: 3em;
+    }
+
+    p {
+    color:#333333;
+    font-size: 1.5em;
+    }
+
+    button{
+    appearance: none;
+    margin: 20px;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    }
+
+    button {
+    position: relative;
+    display: block;
+    padding: 1em 2em 1em 1em;
+    width: 175px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 1;
+    background: #5bbee5;
+    background: linear-gradient(to right, #5bbee5, #52ddae);
+    text-indent: 0.1em;
+    letter-spacing: 0.1em;
+    border-radius: 1.5em;
+    }
+
+    button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 1.5em;
+    margin: auto;
+    display: inline-block;
+    width: 0.5em;
+    height: 0.5em;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    transform: rotate(45deg);
+    transition: right 0.5s;
+    }
+
+    button:hover:after{
+    right: 1em;
+    }
+
+    select{
+    -webkit-appearance:none;
+    appearance:none;
+    width:100%;
+    padding:1em 1em;
+    box-sizing:border-box;
+    font-size:1em;
+    border:#ccc 2.5px solid;
+    border-radius:0;
+    background:#fff;
+    }
+
+    .color.select::after{
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    position:absolute;
+    right:5%;
+    top:35%;
+    border-bottom:#333 2px solid;
+    border-right:#333 2px solid;
+    transform:rotate(45deg)translateY(-30%);
+    }
+
+    .selectbox {
+    width:90%;
+    margin:1em auto;
+    position:relative;
+
+    }
+    .selectbox::after{
+    content:"";
+    display:block;
+    width:10px;
+    height:10px;
+    position:absolute;
+    right:5%;
+    top:35%;
+    border-bottom:#333 2px solid;
+    border-right:#333 2px solid;
+    transform:rotate(45deg)translateY(-30%);
+    }
+
+    .color.selectbox select{
+    background:blue;
+    color:#fff;
+    border-radius:2em;
+    }
+
+    .color.selectbox::after{
+    border-bottom:#fff 5px solid;
+    border-right:#fff 5px solid;
+    }
+    </style>
+
+</head>
+
+<body>
+    <h1>{{title}}</h1>
+    <div class="selectbox">
+        <form method="post">
+            <p>{{message[0]}}</p>
+            <select name="hometeam">
+                {% for hometeam in teams %}
+                    <option value="{{ hometeam }}">{{ hometeam }}</option>
+                {% endfor %}
+            </select>
+            <p>{{message[1]}}</p>
+            <select name="awayteam">
+                {% for awayteam in teams %}
+                    <option value="{{ awayteam }}">{{ awayteam }}</option>
+                {% endfor %}
+            </select>
+            <p>{{message[2]}}</p>
+            <select name="pred_class">
+                {% for class in predict_class %}
+                    <option value="{{ class }}">{{ class }}</option>
+                {% endfor %}
+            </select>
+
+            <p></p>
+            <button class="button", type="submit", value="team,predict_class">予測</button>
+            <button class="button", formaction="http://127.0.0.1:5000/result">結果表示</button>
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
