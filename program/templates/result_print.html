@@ -3,66 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
-    <style type="text/css">
-    h1 {
-    color:#333333;
-    font-size: 3em;
-    }
-
-    p {
-    color:#333333;
-    font-size: 1.5em;
-    right: 1.5em;
-    }
-
-    button{
-    appearance: none;
-    margin: 20px;
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
-    outline: none;
-    }
-
-    button {
-    position: relative;
-    display: block;
-    padding: 1em 2em 1em 1em;
-    width: 175px;
-    font-size: 14px;
-    color: #fff;
-    text-align: center;
-    line-height: 1;
-    background: #5bbee5;
-    background: linear-gradient(to right, #5bbee5, #52ddae);
-    text-indent: 0.1em;
-    letter-spacing: 0.1em;
-    border-radius: 1.5em;
-    }
-
-    button:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 1.5em;
-    margin: auto;
-    display: inline-block;
-    width: 0.5em;
-    height: 0.5em;
-    border-right: 1px solid #fff;
-    border-top: 1px solid #fff;
-    transform: rotate(45deg);
-    transition: right 0.5s;
-    }
-
-    button:hover:after{
-    right: 1em;
-    }
-    </style>
-
-
+    <link rel="stylesheet" href="/static/css/style_result.css">
 </head>
 <body>
     <h1>{{title}}</h1>
@@ -74,7 +15,7 @@
     <div>
         <form>
             <p></p>
-            <button class="button", formaction="http://127.0.0.1:5000/">戻る</button>
+            <button class="button", formaction="http://127.0.0.1:5000/">Back</button>
         </form>
     </div>
 
