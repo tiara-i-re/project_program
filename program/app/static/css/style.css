@@ -1,13 +1,28 @@
 @charset "UTF-8";
 
+body {
+	background-image: url(/static/images/panasta.jpg);
+	background-color:rgba(255,255,255,0.1);
+  background-blend-mode:lighten;
+	}
+
+	/* 領域の透過 */
 h1 {
-  color:#333333;
+  color:#FFFFFF;
   font-size: 3em;
+	background:#fff;
+	background: rgba(0,0,0,0.6);
+	display:inline-block
 }
 
+
+
 p {
-    color:#333333;
+    color:#FFFFFF;
     font-size: 1.5em;
+		background:#fff;
+		background: rgba(0,0,0,0.6);
+		display:inline-block
 }
 
 button{
@@ -57,14 +72,12 @@ button:hover:after{
 }
 
 select{
-    -webkit-appearance:none;
-    appearance:none;
-    width:100%;
+    width:22.5%;
     padding:1em 1em;
     box-sizing:border-box;
     font-size:1em;
     border:#ccc 2.5px solid;
-    border-radius:0;
+    border-radius:10px;
     background:#fff;
     }
 
@@ -85,8 +98,8 @@ select{
     width:90%;
     margin:1em auto;
     position:relative;
-
     }
+
     .selectbox::after{
     content:"";
     display:block;

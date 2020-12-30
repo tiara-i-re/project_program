@@ -18,19 +18,27 @@ function setTF(fObj,vType)
     <div class="selectbox">
         <form method="post">
             <p>{{message[0]}}</p>
+            <br>
             <select name="hometeam">
+                <option value="" hidden>Select</option>
                 {% for hometeam in teams %}
                     <option value="{{ hometeam }}">{{ hometeam }}</option>
                 {% endfor %}
             </select>
+            <br>
             <p>{{message[1]}}</p>
+            <br>
             <select name="awayteam">
+                <option value="" hidden>Select</option>
                 {% for awayteam in teams %}
                     <option value="{{ awayteam }}">{{ awayteam }}</option>
                 {% endfor %}
             </select>
+            <br>
             <p>{{message[2]}}</p>
+            <br>
             <select name="pred_class">
+                <option value="" hidden>Select</option>
                 {% for class in predict_class %}
                     <option value="{{ class }}">{{ class }}</option>
                 {% endfor %}

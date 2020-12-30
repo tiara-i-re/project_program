@@ -14,26 +14,26 @@ from flask import Flask, g, request, render_template, current_app
 
 
 class DBMS:
-    dbname = 'Gamba_Osaka.db'  # データベース名指定
+    db_path = 'app/Gamba_Osaka.db'  # データベース名指定，この指定でappフォルダ内にDBを作れる．
 
     def __init__(self):
         pass
 
     def make_db(self):
         if 'db' not in g:
-            g.db = sqlite3.connect(self.dbname)
+            g.db = sqlite3.connect(self.db_path)
             return g.db
 
     # classの中だけで使いたいので，_を付けている．
     def _get_conn(self):
-        conn = sqlite3.connect(self.dbname)
+        conn = sqlite3.connect(self.db_path)
         return conn
 
     def DF_to_db(self, DF, column_list):
         self.DF = DF
         self.column_list = column_list
 
-        conn = sqlite3.connect(self.dbname)
+        conn = sqlite3.connect(self.db_path)
         #self.DF.to_sql('Gamba_Osaka', g.db, if_exists='append', index=None)
         #self.DF.to_sql('Gamba_Osaka', conn, if_exists='append', index=None)
         conn.commit()

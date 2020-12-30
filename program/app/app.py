@@ -9,8 +9,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-import prediction
-import database_management
+from app import prediction
+from app import database_management
 
 import sqlite3  # sqlite3標準モジュールをインポート
 from flask import Flask, g, request, render_template, current_app, session
@@ -18,7 +18,7 @@ from flask import Flask, g, request, render_template, current_app, session
 app = Flask(__name__)  # Flaskクラスのインスタンス生成
 app.secret_key = 'hogehoge'  # これを設定しないといけない．
 
-teams = ["▼Select", "G大阪", "C大阪", "浦和レッズ", "鹿島アントラーズ", "川崎フロンターレ", "FC東京",
+teams = ["G大阪", "C大阪", "浦和レッズ", "鹿島アントラーズ", "川崎フロンターレ", "FC東京",
          "名古屋グランパス", "柏レイソル", "サンフレッチェ広島", "横浜FM", "ヴィッセル神戸", "北海道コンサドーレ札幌",
          "清水エスパルス", "サガン鳥栖", "ベガルタ仙台", "湘南ベルマーレ", "大分トリニータ", "横浜FC"]
 
@@ -27,7 +27,7 @@ predict_class = ["▼Select", "Win", "Lose", "Draw"]
 
 @app.route("/", methods=['GET', 'POST'])
 def predict():
-    message = ["Select Home team.", "Select Away team", "Select your prediction game result of home team."]
+    message = ["・Select Home team.", "・Select Away team.", "・Select your prediction game result of home team."]
 
     if request.method == 'POST':
         hometeam = request.form['hometeam']
@@ -44,7 +44,7 @@ def predict():
 
         p.print_team_name()
 
-        file_path = "data/GambaOsaka_2019.csv"
+        file_path = "data/GambaOsaka_2019.csv"  # 相対パス(run.pyからが基準)
         gamba_2019 = pd.read_csv(file_path, sep=',')
 
         # カラムリストを取得．
@@ -76,7 +76,7 @@ def predict():
 
     return render_template(
         "index.html",
-        title="Let's J1 League prediction",
+        title="Web App for J1 League prediction",
         message=message,
         teams=teams,
         predict_class=predict_class,
@@ -85,8 +85,8 @@ def predict():
 
 @app.route("/result", methods=['GET', 'POST'])
 def result_print():
-    message = ['accuracy score is...  ', 'The prediction game result you select is：',
-               'The Home team you select is：', 'The Away team you select is：']
+    message = ['・accuracy score is...  ', '・The prediction game result you select is：',
+               '・The Home team you select is：', '・The Away team you select is：']
 
     if request.method == 'POST':
 
@@ -98,7 +98,7 @@ def result_print():
 
         return render_template(
             "result_print.html",
-            title='Sucsssfull prediction!',
+            title='Successful your prediction!',
             message=message,
             accuracy_score=accuracy,
             home_team=hometeam,
