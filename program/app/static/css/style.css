@@ -1,21 +1,75 @@
 @charset "UTF-8";
 
+/*
 body {
 	background-image: url(/static/images/panasta.jpg);
 	background-color:rgba(255,255,255,0.1);
   background-blend-mode:lighten;
 	}
+*/
 
-	/* 領域の透過 */
-h1 {
-  color:#FFFFFF;
-  font-size: 3em;
-	background:#fff;
-	background: rgba(0,0,0,0.6);
-	display:inline-block
+.box {
+	  margin     : auto;
 }
 
+.box .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  animation  : bgAnime 35s infinite;   /* 4画像 × 各5s = 20s */
+}
 
+.box .src1 {
+  background-image : url(/static/images/panasta.jpg); /* 背景の画像を指定 */
+	background-size: 100% auto;  /* 100%で背景を画面にフルで表示 */
+}
+.box .src2 {
+  background-image : url(/static/images/nagoya.png);
+	background-size: 100% auto;   /* 背景の画像を指定 */
+  animation-delay  : 7s;
+}
+.box .src3 {
+  background-image : url(/static/images/omiya.jpeg);
+	background-size: 100% auto;
+  animation-delay  : 14s;
+}
+.box .src4 {
+  background-image : url(/static/images/FM.jpeg);
+	background-size: 100% auto;
+  animation-delay  : 21s;
+}
+.box .src5 {
+  background-image : url(/static/images/kobe.jpg);
+	background-size: 100% auto;
+  animation-delay  : 28s;
+}
+/*
+.box .src4 {
+	background-image : url(/static/images/tokyo.png);
+	background-size: 100% auto;
+  animation-delay  : 5s;
+} */
+
+@keyframes bgAnime {
+   0% { opacity: 0; }
+	 5% { opacity: 1; }
+   17% { opacity: 1; }
+  23% { opacity: 0; }
+ 100% { opacity: 0; }
+}
+
+	/* 領域の透過 ;*/
+h1 {
+  color:#FFFFFF;
+	right: 1em;
+  font-size: 3em;
+	background:#fff;
+	background: rgba(0,0,0,0.5);
+	display:inline-block
+}
 
 p {
     color:#FFFFFF;
@@ -23,6 +77,39 @@ p {
 		background:#fff;
 		background: rgba(0,0,0,0.6);
 		display:inline-block
+}
+
+.h_position{
+	position: relative;
+	top: 25px;
+	left: 20px;
+}
+
+header{
+  z-index: 3;
+	position: fixed;
+  background-color: #333;
+  width: 100%;
+	height: 45px;
+	text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+ul {
+　　overflow:hidden;
+　　list-style:none;
+　　z-index: 20;
+}
+
+ul li {
+  display: inline-block;
+}
+
+
+a {
+  color: #fff;
+　text-transform: uppercase;
 }
 
 button{

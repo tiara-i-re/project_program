@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>{{title}}</title>
@@ -12,11 +13,40 @@ function setTF(fObj,vType)
 	fObj.style.visibility = vType;
 }
 // --></script>
+<header>
+    <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">料金のご案内</a></li>
+            <li><a href="#">車両のご案内</a></li>
+        </ul>
+</header>
 
-<body>
-    <h1>{{title}}</h1>
+
+<body class="box">
+    <div class="bgImg src1">
+        <h1 class="h_position">{{title}}</h1>
+    </div>
+    <div class="bgImg src2">
+
+        <h1 class="h_position">{{title}}</h1>
+    </div>
+    <div class="bgImg src3">
+
+        <h1 class="h_position">{{title}}</h1>
+    </div>
+    <div class="bgImg src4">
+        <h1 class="h_position">{{title}}</h1>
+    </div>
+    <div class="bgImg src5">
+        <h1 class="h_position">{{title}}</h1>
+    </div>
+
+    <h1 class="h_position">{{title}}</h1>
+    <!--<h1 class="h_position">{{title}}</h1>-->
+
     <div class="selectbox">
         <form method="post">
+
             <p>{{message[0]}}</p>
             <br>
             <select name="hometeam">
