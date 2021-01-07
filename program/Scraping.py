@@ -52,17 +52,20 @@ def insert_columns(
 
 if __name__ == "__main__":
     # チーム名でfor文回したい．
-    """team_list = ['g-os', 'kasm', 'ka-f', 'c-os', 'y-fm', 'fctk', 'hiro', 'urawa', 'kobe', 'nago',
+    """team_list = ['g-os', 'kasm', 'ka-f', 'c-os', 'y-fm', 'fctk', 'hiro', 'uraw', 'kobe', 'nago',
                  'send', 'tosu', 'shon', 'oita', 'sapp', 'shim', 'y-fc', 'kasw']"""
 
     # 2015~2020までJ1にいたチーム．セレッソJ2落ちとったやん．
-    team_list = ['g-os', 'kasm', 'ka-f', 'y-fm', 'fctk', 'hiro', 'urawa', 'kobe',
+    team_list = ['g-os', 'kasm', 'ka-f', 'y-fm', 'fctk', 'hiro', 'uraw', 'kobe',
                  'send', 'tosu']
 
-    team_list = ['y-fm', 'fctk', 'hiro', 'urawa', 'kobe',
+    """
+    team_list = ['y-fm', 'fctk', 'hiro', 'uraw', 'kobe',
                  'send', 'tosu']
 
     team_list = ['send', 'tosu']
+    """
+
 
     #team_list = ['kasm']
     #team_list = ['fctk']
@@ -161,7 +164,8 @@ if __name__ == "__main__":
             for row in new_df:  # rowは列名になる．
                 series_row = new_df[row]  # 列名で抜き出し．
 
-                # panda.seriesのstr.split('文字')で指定文字を削除可能，%がついていれば，2列に別れる．expand=Trueは，リストではなくDFにしてくれる．
+                # panda.seriesのstr.split('文字')で指定文字を削除可能，%がついていれば，2列に別れる．
+                # expand=Trueは，リストではなくDFにしてくれる．
                 series_row = series_row.str.split('%', expand=True)
 
                 # splitした後に，そのcolumnの長さが2であれば，後ろの方を削除する．
@@ -194,7 +198,7 @@ if __name__ == "__main__":
                 home_score_column.append(home_score)
                 away_score_column.append(away_score)
 
-                # 勝ち=3，引き分け=1，負け=0とする．
+                # 勝ち=2，引き分け=1，負け=0とする．
                 if home_score > away_score:
                     result_column.append(0)
 
@@ -230,14 +234,6 @@ if __name__ == "__main__":
             new_DF = pd.concat([team_and_season_DF, new_DF], axis=1)
 
             # --------------------ここまでで，「試合日程・結果」が抜き出せた．------------------------
-
-
-
-
-
-
-
-
 
 
 
@@ -326,7 +322,9 @@ if __name__ == "__main__":
                             ex_list.append(per)
 
                         elif stats_name == "総走行距離":
-                            dis = H_number.split('m')[0]  # 走行距離からmを外したい．
+                            del_m = H_number.split('m')[0]  # 走行距離からmを外したい．
+                            split = del_m.split(',')  # ,で分割して，結合することで,を取り除ける．
+                            dis = split[0] + split[1]
                             ex_list.append(dis)
 
                         else:
@@ -343,6 +341,8 @@ if __name__ == "__main__":
 
                         elif stats_name == "総走行距離":
                             dis = A_number.split('m')[0]  # 走行距離からmを外したい．
+                            split = del_m.split(',')  # ,で分割して，結合することで,を取り除ける．
+                            dis = split[0] + split[1]
                             ex_list.append(dis)
 
                         else:

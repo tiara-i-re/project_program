@@ -14,7 +14,7 @@ from flask import Flask, g, request, render_template, current_app
 
 
 class DBMS:
-    db_path = 'app/Gamba_Osaka.db'  # データベース名指定，この指定でappフォルダ内にDBを作れる．
+    db_path = 'app/J1_prediction.db'  # データベース名指定，この指定でappフォルダ内にDBを作れる．
 
     def __init__(self):
         pass
@@ -35,7 +35,7 @@ class DBMS:
 
         conn = sqlite3.connect(self.db_path)
         #self.DF.to_sql('Gamba_Osaka', g.db, if_exists='append', index=None)
-        #self.DF.to_sql('Gamba_Osaka', conn, if_exists='append', index=None)
+        self.DF.to_sql('Gamba_Osaka', conn, if_exists='append', index=None)
         conn.commit()
 
         # SELECT文で全部とってくる．
@@ -66,17 +66,53 @@ class DBMS:
 
         return alldata
 
+    def get_team_name(self, select_name):
+        self.select_name = select_name
+
+        if self.select_name == 'G大阪':
+            db_name = 'Gamba_Osaka'
+
+        elif self.select_name == '浦和レッズ':
+            db_name = 'Urawa'
+
+        elif self.select_name == '鹿島アントラーズ':
+            db_name = 'Kashima'
+
+        elif self.select_name == '川崎フロンターレ':
+            db_name = 'Kawasaki'
+
+        elif self.select_name == 'FC東京':
+            db_name = 'FC_Tokyo'
+
+        elif self.select_name == 'サンフレッチェ広島':
+            db_name = 'Hiroshima'
+
+        elif self.select_name == '横浜FM':
+            db_name = 'Yokohama_FM'
+
+        elif self.select_name == 'ヴィッセル神戸':
+            db_name = 'Kobe'
+
+        elif self.select_name == 'サガン鳥栖':
+            db_name = 'Tosu'
+
+        elif self.select_name == 'ベガルタ仙台':
+            db_name = 'Sendai'
+
+        return db_name
+
     def get_data(self, team_name, column_list):
         self.team_name = team_name
         self.column_list = column_list
 
-        select_team = 'Gamba_Osaka'
+        """select_team = 'Gamba_Osaka'
 
         if team_name == 'G大阪':
             select_team = 'Gamba_Osaka'
+            """
 
         # SELECT文で全部とってくる．
-        select_sql = 'SELECT * FROM {0}'.format(select_team)
+        select_sql = 'SELECT * FROM {0}'.format(self.team_name)
 
         # 同じクラス内のメソッドを実行したい．
         conn = self._get_conn()

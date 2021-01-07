@@ -7,74 +7,109 @@
 </head>
 
 
+<header>
+    <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Predicton</a></li>
+            <li><a href="/result">Results</a></li>
+        </ul>
+</header>
+
+
+
 <body class="box">
     <div class="bgImg src1">
         <h1 class="h_position">{{title}}</h1>
         <br>
-           <p  class="p_position">{{message[2] + home_team}}</p>
-           <br>
-        <p  class="p_position">{{message[3] + away_team}}</p>
+            <p class="p_position">{{message[0] + home_team}}</p>
         <br>
-        <p class="p_position">{{message[1] + pred_class}}</p>
+            <p class="p_position">{{message[1] + away_team}}</p>
         <br>
-            <p class="p_position" style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+            <p class="p_position">{{message[2] + pred_class}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src2">
         <h1 class="h_position">{{title}}</h1>
         <br>
-           <p class="p_position">{{message[2] + home_team}}</p>
-           <br>
-        <p class="p_position">{{message[3] + away_team}}</p>
+            <p class="p_position">{{message[0] + home_team}}</p>
         <br>
-        <p class="p_position">{{message[1] + pred_class}}</p>
+            <p class="p_position">{{message[1] + away_team}}</p>
         <br>
-            <p  class="p_position"style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+            <p class="p_position">{{message[2] + pred_class}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src3">
         <h1 class="h_position">{{title}}</h1>
         <br>
-        <p class="p_position">{{message[2] + home_team}}</p>
+            <p class="p_position">{{message[0] + home_team}}</p>
         <br>
-        <p class="p_position">{{message[3] + away_team}}</p>
+            <p class="p_position">{{message[1] + away_team}}</p>
         <br>
-        <p class="p_position">{{message[1] + pred_class}}</p>
+            <p class="p_position">{{message[2] + pred_class}}</p>
         <br>
-        <p class="p_position" style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src4">
         <h1 class="h_position">{{title}}</h1>
         <br>
-        <p class="p_position">{{message[2] + home_team}}</p>
+            <p class="p_position">{{message[0] + home_team}}</p>
         <br>
-        <p class="p_position">{{message[3] + away_team}}</p>
+            <p class="p_position">{{message[1] + away_team}}</p>
         <br>
-        <p class="p_position">{{message[1] + pred_class}}</p>
+            <p class="p_position">{{message[2] + pred_class}}</p>
         <br>
-        <p class="p_position" style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src5">
         <h1 class="h_position">{{title}}</h1>
         <br>
-        <p class="p_position">{{message[2] + home_team}}</p>
+            <p class="p_position">{{message[0] + home_team}}</p>
         <br>
-        <p class="p_position">{{message[3] + away_team}}</p>
+            <p class="p_position">{{message[1] + away_team}}</p>
         <br>
-        <p class="p_position">{{message[1] + pred_class}}</p>
+            <p class="p_position">{{message[2] + pred_class}}</p>
         <br>
-        <p class="p_position" style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+        <br>
+            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
 
     <div class="selectbox">
         <form>
             <h1 class="h_position">{{title}}</h1>
             <br>
-            <p class="p_position">{{message[2] + home_team}}</p>
+                <p class="p_position">{{message[0] + home_team}}</p>
             <br>
-            <p class="p_position">{{message[3] + away_team}}</p>
+                <p class="p_position">{{message[1] + away_team}}</p>
             <br>
-            <p class="p_position">{{message[1] + pred_class}}</p>
+                <p class="p_position">{{message[2] + pred_class}}</p>
             <br>
-            <p class="p_position" style="font-size: 3em;">{{message[0] + accuracy_score}}</p>
+                <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
+            <br>
+                <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
+            <br>
+                <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
+            <p></p>
             <button class="button", formaction="http://127.0.0.1:5000/">Back</button>
         </form>
     </div>
