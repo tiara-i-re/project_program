@@ -34,17 +34,17 @@ body {
   animation-delay  : 7s;
 }
 .box .src3 {
-  background-image : url(/static/images/omiya.jpeg);
+  background-image : url(/static/images/hiroshima.jpg);
 	background-size: 100% auto;
   animation-delay  : 14s;
 }
 .box .src4 {
-  background-image : url(/static/images/FM.jpeg);
+  background-image : url(/static/images/omiya.jpeg);
 	background-size: 100% auto;
   animation-delay  : 21s;
 }
 .box .src5 {
-  background-image : url(/static/images/kobe.jpg);
+  background-image : url(/static/images/FM.jpeg);
 	background-size: 100% auto;
   animation-delay  : 28s;
 }

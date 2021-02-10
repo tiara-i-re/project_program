@@ -137,11 +137,8 @@ if __name__ == "__main__":
 
             columns = new_df.columns
             #print(columns)
-
             #print(False not in [i not in '指揮官' for i in columns])  # '指揮官'が含まれていれば，ここはTrueになる．
             # '指揮官'が含まれていない(not in)した中に，Falseが含まれていない(not in)がTrueになるため．
-
-            # exit()
 
             # 2014年のデータに'指揮官'がないため．
             # "https://qiita.com/___xxx_/items/76a33ad7cfe64a5fe9d8"　←ここを参考にした．
@@ -200,10 +197,10 @@ if __name__ == "__main__":
 
                 # 勝ち=2，引き分け=1，負け=0とする．
                 if home_score > away_score:
-                    result_column.append(0)
+                    result_column.append(2)
 
                 elif home_score < away_score:
-                    result_column.append(2)
+                    result_column.append(0)
 
                 elif home_score == away_score:
                     result_column.append(1)

@@ -4,112 +4,60 @@
     <meta charset="UTF-8">
     <title>{{title}}</title>
     <link rel="stylesheet" href="/static/css/style_result.css">
+    <!--ライブラリ読み込み -->
 </head>
-
 
 <header>
     <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/">Predicton</a></li>
-            <li><a href="/result">Results</a></li>
-        </ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/">Predicton</a></li>
+        <li><a href="/result">Results</a></li>
+    </ul>
 </header>
 
-
+<div id="win" title={{win_per}} />
+<div id="draw" title="{{draw_per}}" />
+<div id="lose" title="{{lose_per}}" />
 
 <body class="box">
     <div class="bgImg src1">
         <h1 class="h_position">{{title}}</h1>
-        <br>
-            <p class="p_position">{{message[0] + home_team}}</p>
-        <br>
-            <p class="p_position">{{message[1] + away_team}}</p>
-        <br>
-            <p class="p_position">{{message[2] + pred_class}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src2">
         <h1 class="h_position">{{title}}</h1>
-        <br>
-            <p class="p_position">{{message[0] + home_team}}</p>
-        <br>
-            <p class="p_position">{{message[1] + away_team}}</p>
-        <br>
-            <p class="p_position">{{message[2] + pred_class}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src3">
         <h1 class="h_position">{{title}}</h1>
-        <br>
-            <p class="p_position">{{message[0] + home_team}}</p>
-        <br>
-            <p class="p_position">{{message[1] + away_team}}</p>
-        <br>
-            <p class="p_position">{{message[2] + pred_class}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src4">
         <h1 class="h_position">{{title}}</h1>
-        <br>
-            <p class="p_position">{{message[0] + home_team}}</p>
-        <br>
-            <p class="p_position">{{message[1] + away_team}}</p>
-        <br>
-            <p class="p_position">{{message[2] + pred_class}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
     <div class="bgImg src5">
         <h1 class="h_position">{{title}}</h1>
-        <br>
-            <p class="p_position">{{message[0] + home_team}}</p>
-        <br>
-            <p class="p_position">{{message[1] + away_team}}</p>
-        <br>
-            <p class="p_position">{{message[2] + pred_class}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-        <br>
-            <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
     </div>
+
+    <h1 class="h_position">{{title}}</h1>
 
     <div class="selectbox">
         <form>
-            <h1 class="h_position">{{title}}</h1>
-            <br>
-                <p class="p_position">{{message[0] + home_team}}</p>
-            <br>
-                <p class="p_position">{{message[1] + away_team}}</p>
-            <br>
-                <p class="p_position">{{message[2] + pred_class}}</p>
-            <br>
-                <p class="p_position"style="font-size: 3em;">{{message[3] + win_per + message[6]}}</p>
-            <br>
-                <p class="p_position"style="font-size: 3em;">{{message[4] + draw_per + message[6]}}</p>
-            <br>
-                <p class="p_position"style="font-size: 3em;">{{message[5] + lose_per + message[6]}}</p>
+            <p class="canvas_position">
+                {{message[0] + home_team}}
+                <br>
+                {{message[1] + away_team}}
+                <br>
+                {{message[2] + pred_class}}
+                <br>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+                <canvas class="canvas" id="myChart" height="350" width="500"></canvas>
+
+                <script type="text/javascript" src="/static/js/script.js"></script>
+                <br>
+                {{final_message}}
+            </p>
             <p></p>
+            <br>
             <button class="button", formaction="http://127.0.0.1:5000/">Back</button>
         </form>
     </div>

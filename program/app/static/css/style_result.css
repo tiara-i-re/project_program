@@ -18,26 +18,35 @@
 .box .src1 {
 	  background-image : url(/static/images/panasta.jpg); /* 背景の画像を指定 */
 		background-size: 100% auto;  /* 100%で背景を画面にフルで表示 */
+		z-index: 1;
 }
 .box .src2 {
 	  background-image : url(/static/images/nagoya.png);
 		background-size: 100% auto;   /* 背景の画像を指定 */
 	  animation-delay  : 7s;
+		z-index: 1;
 }
 .box .src3 {
-	  background-image : url(/static/images/omiya.jpeg);
+	  background-image : url(/static/images/hiroshima.jpg);
 		background-size: 100% auto;
 	  animation-delay  : 14s;
+		z-index: 1;
 }
 .box .src4 {
-	  background-image : url(/static/images/FM.jpeg);
+	  background-image : url(/static/images/omiya.jpeg);
 		background-size: 100% auto;
 	  animation-delay  : 21s;
+		z-index: 1;
 }
 .box .src5 {
-	  background-image : url(/static/images/kobe.jpg);
+	  background-image : url(/static/images/FM.jpeg);
 		background-size: 100% auto;
 	  animation-delay  : 28s;
+		z-index: 1;
+}
+
+.canvas {
+	  z-index: 2;
 }
 	/*
 	.box .src4 {
@@ -60,7 +69,9 @@ h1 {
     font-size: 3em;
 		background:#fff;
 		background: rgba(0,0,0,0.6);
+		z-index: 2;
 		display:inline-block
+
     }
 
 
@@ -69,18 +80,33 @@ p {
     font-size: 1.5em;
 		background:#fff;
 		background: rgba(0,0,0,0.6);
-		display:inline-block
+		z-index: 2;
+    display:inline-block
     }
 /*
 right: 1.5em;
 */
 
-
 .p_position{
 	position: relative;
 	left: 40px;
 	top: 10px;
-	margin: 17px;
+}
+
+.div_position{
+	position: relative;
+	left: 40px;
+	top: 10px;
+	margin: 13px;
+	z-index: 2
+}
+
+.canvas_position{
+	position: relative;
+	left: 40px;
+	top: 20px;
+	margin: 10px;
+	z-index: 2
 }
 
 .h_position{
@@ -122,6 +148,7 @@ button{
     background: none;
     border: none;
     border-radius: 0;
+		z-index: 2;
     outline: none;
     }
 
